@@ -27,37 +27,37 @@ Some iOS apps using this SDK
 <table><tr>
 <td>
 <a href="http://groupcentric.com" target="_blank">
-<img src="http://groupcentric.com/img/support/gc_appicon_72.png" alt="Groupcentric" />
+<img height='72' src="http://groupcentric.com/img/support/gc_appicon_72.png" alt="Groupcentric" />
 </a>
 </td>
 <td>
 <a href="http://groupcentric.com/placestogo" target="_blank">
-<img src="http://groupcentric.com/img/appicons/thumbs/p2g@2x.png" alt="Places To Go" />
+<img height='72' src="http://groupcentric.com/img/appicons/thumbs/p2g@2x.png" alt="Places To Go" />
 </a>
 </td>
 <td>
 <a href="http://groupcentric.com/catsndogs" target="_blank">
-<img src="http://groupcentric.com/img/appicons/thumbs/cnd@2x.png" alt="Cats n Dogs" />
+<img height='72' src="http://groupcentric.com/img/appicons/thumbs/cnd@2x.png" alt="Cats n Dogs" />
 </a>
 </td>
 <td>
 <a href="http://groupcentric.com/handmade" target="_blank">
-<img src="http://groupcentric.com/img/appicons/thumbs/hm@2x.png" alt="Handmade" />
+<img height='72' src="http://groupcentric.com/img/appicons/thumbs/hm@2x.png" alt="Handmade" />
 </a>
 </td>
 <td>
 <a href="http://groupcentric.com/movienight" target="_blank">
-<img src="http://groupcentric.com/img/appicons/thumbs/mn@2x.png" alt="MovieNight" />
+<img height='72' src="http://groupcentric.com/img/appicons/thumbs/mn@2x.png" alt="MovieNight" />
 </a>
 </td>
 <td>
 <a href="http://groupcentric.com/sportsfeed" target="_blank">
-<img src="http://groupcentric.com/img/appicons/thumbs/sf@2x.png" alt="Places To Go" />
+<img height='72' src="http://groupcentric.com/img/appicons/thumbs/sf@2x.png" alt="Places To Go" />
 </a>
 </td>
 <td>
 <a href="http://groupcentric.com/eventcentric" target="_blank">
-<img src="http://groupcentric.com/img/appicons/thumbs/ec@2x.png" alt="Eventcentric" />
+<img height='72' src="http://groupcentric.com/img/appicons/thumbs/ec@2x.png" alt="Eventcentric" />
 </a>
 </td>
 </tr></table>
