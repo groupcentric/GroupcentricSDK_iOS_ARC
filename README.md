@@ -1,7 +1,7 @@
 Feature
 ====================
 
-v1.0  12/7/2012
+v1.0.0  2/28/13
 
 This is the Groupcentric SDK with ARC enabled for iOS.
 This is the simplest way to add private sharing and group chat into your app.
@@ -22,20 +22,45 @@ Documentation and support can be found at http://groupcentric.com
 
 ====================
 
-Building
+Some iOS apps using this SDK
 ====================
-
-1) Build the project.
-
-2) In finder locate the Debug-iphoneos folder for your build. (ex: /Users/kbessette/Library/Developer/Xcode/DerivedData/GroupcentricSDK_ARC-xxxxx/Build/Products/)
-
-3) Add a folder called GroupcentricSDK.embeddedFramework
-
-4) Copy GroupcentricSDK.framework from Debug-iphoneos to the new folder GroupcentricSDK.embeddedFramework
-
-5) Add the SDK resources folder downloaded with the source from Github to the GroupcentricSDK.embeddedFramework folder
-
-6) Follow the steps in docs at http://groupcentric.com to add the framework to your project.
+<table><tr>
+<td>
+<a href="http://groupcentric.com" target="_blank">
+<img src="http://groupcentric.com/img/support/gc_appicon_72.png" alt="Groupcentric" />
+</a>
+</td>
+<td>
+<a href="http://groupcentric.com/placestogo" target="_blank">
+<img src="http://groupcentric.com/img/appicons/thumbs/p2g@2x.png" alt="Places To Go" />
+</a>
+</td>
+<td>
+<a href="http://groupcentric.com/catsndogs" target="_blank">
+<img src="http://groupcentric.com/img/appicons/thumbs/cnd@2x.png" alt="Cats n Dogs" />
+</a>
+</td>
+<td>
+<a href="http://groupcentric.com/handmade" target="_blank">
+<img src="http://groupcentric.com/img/appicons/thumbs/hm@2x.png" alt="Handmade" />
+</a>
+</td>
+<td>
+<a href="http://groupcentric.com/movienight" target="_blank">
+<img src="http://groupcentric.com/img/appicons/thumbs/mn@2x.png" alt="MovieNight" />
+</a>
+</td>
+<td>
+<a href="http://groupcentric.com/sportsfeed" target="_blank">
+<img src="http://groupcentric.com/img/appicons/thumbs/sf@2x.png" alt="Places To Go" />
+</a>
+</td>
+<td>
+<a href="http://groupcentric.com/eventcentric" target="_blank">
+<img src="http://groupcentric.com/img/appicons/thumbs/ec@2x.png" alt="Eventcentric" />
+</a>
+</td>
+</tr></table>
 
 ====================
 
@@ -70,13 +95,6 @@ Copyright 2012 Shizzlr Inc.
 
 ====================
 
-Our works
-====================
 
-<a href="http://groupcentric.com" target="_blank">Some apps using this SDK</a>
-
-<img src="http://groupcentric.com/img/support/gc_appicon_72.png" alt="Groupcentric" /> &nbsp; 
-
-<img src="http://groupcentric.com/img/support/gs_appicon_72.png" alt="Groupsquare" /> &nbsp; 
 
 
