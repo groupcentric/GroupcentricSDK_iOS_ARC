@@ -269,7 +269,20 @@ int _justSignedIn;
     }
 }
 
-- (void)viewPrivacyTos:(id)sender {
+-(void)viewPrivacyTos:(id)sender {
+    GCWebBrowserVC *controller = [[GCWebBrowserVC alloc] initWithURLString:@"http://groupcentric.com/m/privacytos.html"];
+    [self.navigationController pushViewController:controller animated:YES];
+    
+}
+-(void) getStarted:(id)sender {
+    //need to ask them to signin
+    GCSignupOrLoginVC *controller = [[GCSignupOrLoginVC alloc] initInSignupMode:YES];
+    
+    // Set up navigation
+    UINavigationController *navCntrl = [[UINavigationController alloc] initWithRootViewController:controller];
+    
+    // Show view
+    [self presentModalViewController:navCntrl animated:YES];
     
 }
 
