@@ -35,6 +35,7 @@
 
 
 #import <GroupcentricSDK_ARC/GroupcentricSDK_ARC.h>
+#import "ConcertDetailsVC.h"
 
 static CGFloat const kMessageFontSize           = 16.0f;
 static CGFloat const kMessageTextWidth          = 198.0f;
@@ -145,8 +146,15 @@ static CGFloat const kChatBarAttachedPhoto      = 180.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
+    
+    //setup the nav controllers appearance
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:0.1 alpha:1.0]];
+    //set the nav controller background image
+    /*if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"gc_header.png"] forBarMetrics:UIBarMetricsDefault];
+    }*/
     self.title = myGroup.groupName;
     
     // Set up the table view's background
@@ -238,7 +246,8 @@ static CGFloat const kChatBarAttachedPhoto      = 180.0f;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+   
     if (shouldNotReload) {
         shouldNotReload = NO;
     } else {
@@ -670,10 +679,12 @@ static CGFloat const kChatBarAttachedPhoto      = 180.0f;
         
         GCSharedObject *objectAttached = entry.object;
         
+        
+        
         //
         // Set up the frames of the background image as well as the details label/image
         //
-        groupCell.attachmentBackground.image = [[UIImage imageNamed:@"GCObjectbg.png"] stretchableImageWithLeftCapWidth:6.0 topCapHeight:8.0];
+        groupCell.attachmentBackground.image = [[UIImage imageNamed:@"gc_objectbg.png"] stretchableImageWithLeftCapWidth:6.0 topCapHeight:8.0];
         
         //if (entry.userIsSelf) {
         //    groupCell.attachmentBackground.frame = CGRectMake(CGRectGetMaxX(groupCell.userNameLabel.frame) - CELL_OBJECT_WIDTH, runningCellHeight + 13, CELL_OBJECT_WIDTH, CELL_OBJECT_HEIGHT + 10);
@@ -702,7 +713,9 @@ static CGFloat const kChatBarAttachedPhoto      = 180.0f;
         //
         // Set the labels
         //
+        [groupCell.attachmentDetails setNumberOfLines:1];
         groupCell.attachmentLabel.text = objectAttached.varTitle;
+        [groupCell.attachmentLabel sizeToFit];
         
         // Check if the object is either a normal object or a brand object from the same API key
         if (entry.type == GCMessageTypeURL) {
@@ -712,7 +725,7 @@ static CGFloat const kChatBarAttachedPhoto      = 180.0f;
                 groupCell.attachmentDetails.text = objectAttached.varSubtitle;
             }
             else
-                groupCell.attachmentDetails.text = objectAttached.var1;
+                groupCell.attachmentDetails.text = @"";//objectAttached.var1;
         } else if (entry.type == GCMessageTypeSharedObject || [objectAttached.apiKey isEqualToString:groupcentric._apiKey]) {
             // Regular object
             if ([objectAttached.varDateString length]) {
@@ -725,6 +738,8 @@ static CGFloat const kChatBarAttachedPhoto      = 180.0f;
                 groupCell.attachmentDetails.text = objectAttached.varSubtitle;
             }
         } else {
+          
+            
             // This is a brand custom object 
             groupCell.attachmentDetails.text = [NSString stringWithFormat:@"View details on %@ app", entry.brand];
         }
@@ -878,8 +893,8 @@ static CGFloat const kChatBarAttachedPhoto      = 180.0f;
                 shouldNotReload = YES;
             }
             else{
-                /*DEVELOPERS ADD YOUR CUSTOM OBJECT CODE HERE
-                 if (messageSelected.type == XYZ) {  //your custom object TYPE
+                //DEVELOPERS ADD YOUR CUSTOM OBJECT CODE HERE
+                 if (messageSelected.type == 101) {  //your custom object TYPE
                     //Take the values from the messageSelected and pass them to a view controller of your own to process.
                     //You can pass the GCObject object  messageSelected.object  which contains all the message content
                     //or you can pass the values individually if you want (all are strings):
@@ -890,8 +905,12 @@ static CGFloat const kChatBarAttachedPhoto      = 180.0f;
                     //messageSelected.object.varDateString;
                     //messageSelected.object.varDetails;
                     //messageSelected.object.varMarkup;
+                     ConcertDetailsVC *controller = [[ConcertDetailsVC alloc] init];
+                     // WebBrowserVC *controller = [[WebBrowserVC alloc] initWithDetails:eventEntry];
+                     
+                     [self.navigationController pushViewController:controller animated:YES];
                  }
-                 */
+                 
             }
             
         }
@@ -1169,9 +1188,11 @@ static CGFloat const kChatBarAttachedPhoto      = 180.0f;
         newMessage.longitude = locationManager.location.coordinate.longitude;
     } else if (fromSharedSelector) {
         //app content object being shared
+        newMessage.brand = @"BigNoiz";
         newMessage.attachmentImage = sharedObject.imageURL;
         newMessage.object = [[GCSharedObject alloc] init];
         newMessage.type = sharedObject.type;
+        newMessage.object.apiKey = groupcentric._apiKey;
         newMessage.object.varTitle = sharedObject.varTitle;
         newMessage.object.varSubtitle = sharedObject.varSubtitle;
         newMessage.object.imageURL = sharedObject.imageURL;
