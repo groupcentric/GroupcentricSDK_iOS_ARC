@@ -35,7 +35,7 @@
 
 
 #import <GroupcentricSDK_ARC/GroupcentricSDK_ARC.h>
-#import "ConcertDetailsVC.h"
+
 
 static CGFloat const kMessageFontSize           = 16.0f;
 static CGFloat const kMessageTextWidth          = 198.0f;
@@ -905,10 +905,10 @@ static CGFloat const kChatBarAttachedPhoto      = 180.0f;
                     //messageSelected.object.varDateString;
                     //messageSelected.object.varDetails;
                     //messageSelected.object.varMarkup;
-                     ConcertDetailsVC *controller = [[ConcertDetailsVC alloc] init];
+                    
                      // WebBrowserVC *controller = [[WebBrowserVC alloc] initWithDetails:eventEntry];
                      
-                     [self.navigationController pushViewController:controller animated:YES];
+                     //[self.navigationController pushViewController:controller animated:YES];
                  }
                  
             }
